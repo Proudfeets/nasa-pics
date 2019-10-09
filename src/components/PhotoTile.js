@@ -4,7 +4,7 @@ class PhotoTile extends Component {
   render(){
     return(
       <div>
-      <h1>Hello!</h1>
+      <h1>Hello! I'm the PhotoTile!</h1>
       </div>
     )
   }
