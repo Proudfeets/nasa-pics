@@ -26,7 +26,7 @@ componentDidMount(){
 
     return(
       <div>
-      <h3>"Photo Container!"</h3>
+      <h3>"This is the Photo Container!"</h3>
     <PhotoTile/>
     </div>
     )
