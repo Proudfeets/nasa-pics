@@ -6,6 +6,8 @@
 
   ~ o ~
 
+Built using Percy and CodeShip
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 To run this app you will need to get an api key and api id from NASA.
@@ -44,4 +46,3 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
