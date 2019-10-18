@@ -8,6 +8,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+To run this app you will need to get an api key and api id from NASA.
+The link for that is: https://api.nasa.gov/
+
 
 ## Available Scripts
 
