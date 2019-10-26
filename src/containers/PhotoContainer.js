@@ -5,20 +5,29 @@ class PhotoContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
-      clickedOn: true
+      image: {},
+      loading: true
     };
   }
-
+  
 componentDidMount(){
-    fetch(`https://api.nasa.gov/EPIC/api/natural/images?api_key=KeyGoesHere`)
+    fetch(`https://epic.gsfc.nasa.gov/api/natural?api_key=${process.env.REACT_APP_NASA_API_KEY}`)
     .then((response) => {
         let responseBody = response.json()
         return responseBody;
     })
     .then(responseBody => {
       this.setState({
-        photos:responseBody.photos
-        });
+        image:{
+          id:responseBody[0].identifier,
+          image:responseBody[0].image,
+          caption:responseBody[0].caption,
+          year: responseBody[0].identifier.slice(0, 4),
+          month: responseBody[0].identifier.slice(4,6),
+          day: responseBody[0].identifier.slice(6,8)
+        },
+        loading:false
+        }, () => console.log(this.state.image));
       });
     }
 
@@ -26,8 +35,12 @@ componentDidMount(){
 
     return(
       <div>
-      <h3>"This is the Photo Container!"</h3>
-    <PhotoTile/>
+      <h3>Photo Courtesy of NASA's EPIC Program</h3>
+      {this.state.loading ?
+        ("Loading...") : 
+        <PhotoTile
+          image={this.state.image}
+          />}
     </div>
     )
   }
